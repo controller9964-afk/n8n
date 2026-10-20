@@ -1,0 +1,120 @@
+✅ CapMonster.Cloud — Fast, Reliable CAPTCHA Solving for Automation & Scraping
+
+[![CapMonster Cloud](https://help.zennolab.com/upload/u/e4/e4bc15839b25.png)](https://capmonster.cloud/en/?utm_source=github&utm_campaign=cmcrep)
+
+# CapMonster Cloud node for n8n
+
+[![npm version](https://img.shields.io/npm/v/%40zennolab_com%2Fn8n-nodes-capmonstercloud)](https://www.npmjs.com/package/@zennolab_com/n8n-nodes-capmonstercloud)
+
+Use this community node to create and solve supported CapMonster Cloud tasks inside n8n workflows.
+
+## Links
+
+- Package: [@zennolab_com/n8n-nodes-capmonstercloud](https://www.npmjs.com/package/@zennolab_com/n8n-nodes-capmonstercloud)
+- Documentation: [docs.capmonster.cloud](https://docs.capmonster.cloud/?utm_source=github&utm_campaign=cmcrep)
+- Dashboard / API key: [dash.capmonster.cloud](https://dash.capmonster.cloud/?utm_source=github&utm_campaign=cmcrep)
+
+## Requirements
+
+- n8n with community nodes enabled
+- A CapMonster Cloud account
+- A valid CapMonster Cloud API key
+
+## Installation
+
+Install the package as a community node in n8n:
+
+```bash
+npm install @zennolab_com/n8n-nodes-capmonstercloud
+```
+
+You can also install it from the n8n Community Nodes UI.
+
+## Quick start
+
+1. Install the community node.
+2. Add a **CapMonster Cloud API** credential with your client key.
+3. Choose a task type and run the workflow.
+
+Need to test before depositing? Contact support and we’ll add trial credits to your account.
+
+## Credentials
+
+This node uses one credential:
+
+- **CapMonster Cloud API**
+  - `Client Key`: your API key from [CapMonster Cloud Dashboard](https://dash.capmonster.cloud?utm_source=github&utm_campaign=cmcrep)
+
+## Supported task families
+
+The node provides multiple task types, including:
+
+- JSON (custom task payload)
+- Recaptcha V2 and Recaptcha V2 Enterprise
+- Recaptcha V3 and Recaptcha V3 Enterprise
+- GeeTest V3 and GeeTest V4
+- Cloudflare Turnstile (token, managed challenge, waiting room)
+- Image to Text
+- Complex image tasks (click and recognition)
+- Additional task types such as DataDome, Basilisk, TenDI, Amazon variants, Binance, Imperva, Prosopo, Temu, Yidun, MTCaptcha, Altcha, FunCaptcha, Castle, TSPD, and Hunt
+
+See the public docs for request details, task parameters, and task-specific API behavior.
+
+Some task types support optional proxy parameters.
+
+## Usage
+
+1. Add **CapMonster Cloud** node to your workflow.
+2. Select or create **CapMonster Cloud API** credentials.
+3. Choose a task type in **Task Type**.
+4. Fill required fields for the selected task.
+5. Execute the node.
+
+The node creates a task, polls CapMonster Cloud until completion, and returns the solution in the node output.
+
+## JSON task example
+
+When using the JSON operation, provide a valid CapMonster task object without `clientKey`:
+
+```json
+{
+	"type": "RecaptchaV2Task",
+	"websiteURL": "https://lessons.zennolab.com/captchas/recaptcha/v2_simple.php?level=high",
+	"websiteKey": "6Lcg7CMUAAAAANphynKgn9YAgA4tQ2KI_iqRyTwd"
+}
+```
+
+## Output
+
+The node returns the solved task response from CapMonster Cloud, including solution fields for the selected task type.
+
+## Troubleshooting
+
+- Verify your API key is valid and active.
+- Confirm all required fields for the selected task type are provided.
+- For JSON tasks, ensure the payload is valid JSON and matches the API schema.
+- If a task requires proxy data, provide a working proxy host, port, and protocol.
+
+## Optional UI examples
+
+You can use the screenshots below as a quick visual reference for node setup in n8n.
+
+### Node and task type selection
+
+![CapMonster Cloud node setup](images/selectCaptcha1.png)
+
+### Credentials configuration
+
+![CapMonster Cloud credentials](images/keyNode.png)
+
+## Documentation
+
+- [CapMonster Cloud Documentation](https://docs.capmonster.cloud/?utm_source=github&utm_campaign=cmcrep)
+- [CapMonster CAPTCHA task reference](https://docs.capmonster.cloud/docs/captchas/?utm_source=github&utm_campaign=cmcrep)
+- [n8n Community Nodes Guide](https://docs.n8n.io/integrations/community-nodes/)
+
+## License
+
+[MIT](LICENSE)
+
+:star:️ If you find this project useful, please give it a star on GitHub!
